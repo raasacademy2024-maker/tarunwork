@@ -2,8 +2,8 @@ package admindashboard;
 import java.util.ArrayList;
 
 class admin_accounts{
-	ArrayList<String> account_names;
-	ArrayList<String> account_passwords;
+	ArrayList<String> account_names = new ArrayList<String>();
+	ArrayList<String> account_passwords = new ArrayList<String>();
 	
 	boolean add_account(String account_name, String account_password)
 	{

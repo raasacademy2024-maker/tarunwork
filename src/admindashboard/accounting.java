@@ -1,19 +1,20 @@
 package admindashboard;
+
 import java.util.ArrayList;
 
 class sales{
-	ArrayList<String> account_holder_names;
-	ArrayList<Long> sale_value;
-	ArrayList<String> bank_account_number;
-	ArrayList<String> regional_bank_code;
-	ArrayList<String> courses_sold;
+	ArrayList<String> account_holder_names = new ArrayList<String>();
+	ArrayList<Long> sale_value = new ArrayList<Long>();
+	ArrayList<String> bank_account_numbers = new ArrayList<String>();
+	ArrayList<String> regional_bank_codes = new ArrayList<String>();
+	ArrayList<String> courses_sold = new ArrayList<String>();
 	
 	boolean add_account_details (String account_holder_name, long sale_amount, String bank_account_number_1, String bank_regional_code, String course_sold)
 	{
 		account_holder_names.add(account_holder_name);
 		sale_value.add(sale_amount);
-		bank_account_number.add(bank_account_number_1);
-		regional_bank_code.add(bank_regional_code);
+		bank_account_numbers.add(bank_account_number_1);
+		regional_bank_codes.add(bank_regional_code);
 		courses_sold.add(course_sold);
 		
 		return true;
@@ -27,8 +28,8 @@ class sales{
 			{
 				account_holder_names.remove(i);
 				sale_value.remove(i);
-				bank_account_number.remove(i);
-				regional_bank_code.remove(i);
+				bank_account_numbers.remove(i);
+				regional_bank_codes.remove(i);
 			}
 		}
 		
@@ -39,8 +40,8 @@ class sales{
 	{
 		account_holder_names.clear();
 		sale_value.clear();
-		bank_account_number.clear();
-		regional_bank_code.clear();
+		bank_account_numbers.clear();
+		regional_bank_codes.clear();
 		
 		return true;
 	}
@@ -52,9 +53,7 @@ public class accounting{
 	public static void main (String args[])
 	{
 		sales s = new sales();
-		long sale_value = 500;
-		String bank_account_number = "500020001";
-		boolean done = s.add_account_details("Tarun", sale_value, bank_account_number, "500010020", "Astrology");
-		
+		boolean done = s.add_account_details("Tarun", 500, "500102010", "500010020", "Astrology");
+		done = s.clear_list();
 	}
 }
