@@ -201,13 +201,27 @@ class student_accounts{
 public class accounts{
 	public static void main (String args[])
 	{
-		promoter_accounts p = new promoter_accounts();
-		p.add_account("Tarun", "Password");
-		String array[] = p.return_account_data("Tarun");
+		student_accounts s = new student_accounts();
 		
-		System.out.println("Account username : " + array[0]);
-		System.out.println("Account password : " + array[1]);
+		try{
+			
+			boolean done = s.add_account("Tarun", "+91 9849088200", "catchtherainbow6@protonmail.com", "My name is Tarun", "Manipal Institute of Technology");
+		}catch(StringLongerThanExpectedException e)
+		{
+			e.printStackTrace();
+			System.out.println();
+		}
 		
-		p.clear_list();
+		String account_data[] = s.return_account_data("Tarun");
+		
+		System.out.println("Username : " + account_data[0]);
+		System.out.println("Phone number : " + account_data[1]);
+		System.out.println("Email id : " + account_data[2]);
+		System.out.println("Brief description of the person : " + account_data[3]);
+		System.out.println("University name : " + account_data[4]);
+		
+		s.remove_account("Tarun");
+		
+		s.clear_list();
 	}
 }
