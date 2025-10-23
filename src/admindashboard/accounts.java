@@ -220,6 +220,12 @@ public class accounts{
 		System.out.println("Brief description of the person : " + account_data[3]);
 		System.out.println("University name : " + account_data[4]);
 		
+		account_data[0] = "";
+		account_data[1] = "";
+		account_data[2] = "";
+		account_data[3] = "";
+		account_data[4] = "";
+		
 		s.remove_account("Tarun");
 		
 		s.clear_list();
