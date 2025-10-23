@@ -2,7 +2,7 @@ package database;
 
 import java.util.ArrayList;
 
-class connection{
+class driver{
 	
 }
 
